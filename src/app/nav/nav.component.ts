@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
 export class NavComponent implements OnInit {
 
   public patients = [];
+  public countTotal = 0;
+  public countCompleted = 0;
+  public countWaiting = 0;
 
   constructor(
     private patientService : PatientService,
@@ -18,9 +21,18 @@ export class NavComponent implements OnInit {
 
   ngOnInit(){
     this.patientService.getPatient()
-      .subscribe(response => this.patients = response);
-    console.log(this.patients);
-    
+      .subscribe(response => {
+        this.patients = response;
+
+        //Calculate Status Counts
+        for (const patient of this.patients) {
+          if(patient.status)
+            this.countCompleted++;
+          else
+            this.countWaiting++;
+          this.countTotal++;
+        }
+      });
   }
   title = 'Queue Management';
   onSelect(patient){
