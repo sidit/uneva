@@ -16,7 +16,7 @@ export class PatientService {
     return this.http.get<Ipatient[]>(this._url);
   }
 
-  getDetails(): Observable<Ipatient[]>{
-    return this.http.get<Ipatient[]>(this._url2);
+  getDetails(pid : number): Observable<Ipatient[]>{
+    return this.http.get<Ipatient[]>(this._url2 + pid);
   }
 }
