@@ -12,8 +12,8 @@ export class DetailsComponent implements OnInit {
 
   constructor(private patientService: PatientService) { }
 
-  ngOnInit(): void {
-    this.patientService.getDetails()
+  ngOnInit() {
+    this.patientService.getDetails(512759)
     .subscribe(response => this.details = response);
   console.log(this.details);
   }
