@@ -1,6 +1,5 @@
 import { PatientService } from './../patient.service';
 import { Component, OnInit } from '@angular/core';
-import { Ipatient } from '../patient';
 
 @Component({
   selector: 'app-details',

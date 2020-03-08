@@ -25,6 +25,7 @@ nav .material-icons {
 .list-item {
     background: #fff;
     margin: .2em 0;
+    cursor: pointer;
 }
 .list-item .token-name {
     padding: .5em;
