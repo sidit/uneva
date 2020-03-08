@@ -3,4 +3,5 @@ export interface Ipatient{
     name : string;
     description : string;
     timestamp : number;
+    pid : number;
 }

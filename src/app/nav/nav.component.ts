@@ -1,5 +1,6 @@
 import { PatientService } from './../patient.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -10,13 +11,22 @@ export class NavComponent implements OnInit {
 
   public patients = [];
 
-  constructor( private patientService : PatientService ) { }
+  constructor( 
+    private patientService : PatientService ,
+    private router : Router
+    ) { }
 
   ngOnInit(){
     this.patientService.getPatient()
       .subscribe(response => this.patients = response);
-    console.log(this.patients);
-    
   }
   title = 'Queue Management';
+  onSelect(patient){
+    console.log(patient.other.pid);
+    this.router.navigate(['/patient',patient.other.pid]);
+  }
 }
+
+
+
+

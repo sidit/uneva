@@ -11,7 +11,7 @@
         </div>
     </section>
     <section id="patient-list">
-        <div class="row list-item" *ngFor = "let patient of patients" >   
+        <div class="row list-item" *ngFor = "let patient of patients" (click)="onSelect(patient)">   
             <div class="col-md-3 token-name">
                 {{patient.tokenName}}
             </div>
@@ -24,7 +24,7 @@
                     <i class="material-icons">more_vert</i>
                 </div>
                 <div class="status-info">
-                    <span class="time-stamp">{{patient.timestamp}}</span>
+                    <span class="time-stamp">{{patient.timestamp | date:'dd-MMM hh:mm a'}}</span>
                     <span *ngIf="patient.status; else waiting">
                         <i class="material-icons" style="color: green;">brightness_1</i>
                     </span>
@@ -36,3 +36,6 @@
         </div>
     </section>
 </div>
+
+
+
