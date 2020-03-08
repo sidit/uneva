@@ -11,14 +11,16 @@ export class NavComponent implements OnInit {
 
   public patients = [];
 
-  constructor( 
-    private patientService : PatientService ,
+  constructor(
+    private patientService : PatientService,
     private router : Router
     ) { }
 
   ngOnInit(){
     this.patientService.getPatient()
       .subscribe(response => this.patients = response);
+    console.log(this.patients);
+    
   }
   title = 'Queue Management';
   onSelect(patient){
@@ -26,7 +28,3 @@ export class NavComponent implements OnInit {
     this.router.navigate(['/patient',patient.other.pid]);
   }
 }
-
-
-
-

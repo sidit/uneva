@@ -24,7 +24,7 @@
                     <i class="material-icons">more_vert</i>
                 </div>
                 <div class="status-info">
-                    <span class="time-stamp">{{patient.timestamp | date:'dd-MMM hh:mm a'}}</span>
+                    <span class="time-stamp">{{patient.timestamp}}</span>
                     <span *ngIf="patient.status; else waiting">
                         <i class="material-icons" style="color: green;">brightness_1</i>
                     </span>
@@ -36,6 +36,3 @@
         </div>
     </section>
 </div>
-
-
-
