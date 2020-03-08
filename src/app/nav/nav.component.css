@@ -1,9 +1,60 @@
-#focus{
+#focus {
     border: 1px solid;
     padding: 10px;
     box-shadow: 5px 10px 8px #888888 ;
 }
 
-#small{
+#small {
     padding: 0 , auto;
+}
+
+nav .ml-auto {
+    color: #fff;
+}
+nav .material-icons {
+    padding: 0 .5em;
+}
+
+#application {
+    background: #eee;
+}
+#count .row .col {
+    text-align: center;
+}
+
+.list-item {
+    background: #fff;
+    margin: .2em 0;
+}
+.list-item .token-name {
+    padding: .5em;
+    font-size: 2em;
+    color: red;
+}
+.list-item .patient {
+    padding: .5em;
+}
+.list-item .patient .name{
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+.list-item .patient .desc{
+    font-size: 1em;
+    text-transform: uppercase;
+}
+.list-item .meta{
+    padding: .5em;
+    text-align: right;
+}
+.list-item .meta .more {
+    color: #424242;
+}
+.list-item .meta .status-info {
+    line-height: 2em;
+}
+.list-item .meta .status-info .time-stamp {
+    color: #212121;
+}
+.list-item .meta .status-info .status {
+    color: red;
 }

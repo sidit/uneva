@@ -1,25 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a href="/" class="navbar-brand">{{title}}</a>
-    <span class="ml-auto" style="color: #fff">Hello</span>
-</nav>
-<table class="table" id="small">
-    <thead>
-        <tr>
-            <td>Sidit</td>
-            <td>Nischal</td>
-            <td>24</td>
-        </tr>
-    </thead>
-</table>
-
-<div  id="focus">
-    001        Dinesh Tiwari
+<div id="application">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a href="/" class="navbar-brand">{{title}}</a>
+        <span class="ml-auto"><i class="material-icons">view_week</i><i class="material-icons">more_vert</i></span>
+    </nav>
+    <section id="count">
+        <div class="row">
+            <div class="col">Waiting: </div>
+            <div class="col">Complete: </div>
+            <div class="col">Total: </div>
+        </div>
+    </section>
+    <section id="patient-list">
+        <div class="row list-item" *ngFor = "let patient of patients" >   
+            <div class="col-md-3 token-name">
+                {{patient.tokenName}}
+            </div>
+            <div class="col-md-6 patient">
+                <div class="name">{{patient.name}}</div>
+                <div class="desc">{{patient.description}}</div>
+            </div>
+            <div class="col-md-3 meta">
+                <div class="more">
+                    <i class="material-icons">more_vert</i>
+                </div>
+                <div class="status-info">
+                    <span class="time-stamp">{{patient.timestamp}}</span>
+                    <span *ngIf="patient.status; else waiting">
+                        <i class="material-icons" style="color: green;">brightness_1</i>
+                    </span>
+                    <ng-template #waiting>
+                        <i class="material-icons" style="color: red;">brightness_1</i>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-
-
-<ul *ngFor = "let patient of patients">
-    <li>{{patient.name}}</li>
-</ul>
-
-
-

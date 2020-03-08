@@ -14,7 +14,9 @@ export class NavComponent implements OnInit {
 
   ngOnInit(){
     this.patientService.getPatient()
-      .subscribe(response => this.patients = response.data);
+      .subscribe(response => this.patients = response);
+    console.log(this.patients);
+    
   }
   title = 'Queue Management';
 }
