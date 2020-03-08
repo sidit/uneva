@@ -1,5 +1,6 @@
 import { PatientService } from './../patient.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -9,13 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class DetailsComponent implements OnInit {
 
   public details = [];
+  public patientId;
+  public title;
 
-  constructor(private patientService: PatientService) { }
+  constructor(
+    private patientService: PatientService,
+    private route : ActivatedRoute 
+    ) { }
 
   ngOnInit() {
-    this.patientService.getDetails(512759)
-    .subscribe(response => this.details = response);
-  console.log(this.details);
+    this.patientId = parseInt(this.route.snapshot.paramMap.get('pid'));
+    
+    this.patientService.getDetails(this.patientId)
+    .subscribe(response => {
+      this.details = response;
+      this.title = this.details.person_full_name;
+    });
   }
-
 }

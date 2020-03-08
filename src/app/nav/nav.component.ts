@@ -36,7 +36,6 @@ export class NavComponent implements OnInit {
   }
   title = 'Queue Management';
   onSelect(patient){
-    console.log(patient.other.pid);
     this.router.navigate(['/patient',patient.other.pid]);
   }
 }

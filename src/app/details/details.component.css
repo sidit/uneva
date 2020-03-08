@@ -1,3 +1,17 @@
+nav .ml-auto {
+    color: #fff;
+}
+nav .material-icons {
+    padding: 0 .5em;
+}
+
+#application {
+    background: #eee;
+}
+
+#details-pic {
+    width: 10em;
+}
 #patient-details {
     text-align: center;
 }
