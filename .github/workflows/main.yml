@@ -1,0 +1,23 @@
+name: Simple Build Pipeline
+
+# 1. EVENT: What triggers this workflow
+on:
+  push:
+    branches:
+      - main
+
+# 2. JOBS: What work needs to be done
+jobs:
+  build-and-test:
+    # 3. RUNNER: The machine executing this job
+    runs-on: ubuntu-latest
+
+    # 4. STEPS: Sequential tasks inside the job
+    steps:
+      # 5. ACTION: A pre-built helper to pull code from GitHub
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      # STEP WITH COMMAND: Running a shell script directly
+      - name: Run a simple script
+        run: echo "Code checked out successfully! Running tests..."
